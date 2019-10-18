@@ -1,0 +1,27 @@
+{
+  "name": "express-xs-server",
+  "version": "1.0.0",
+  "description": "The simple server based on `Express`",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "init": "npm install --save",
+    "publish": "npm publish"
+  },
+  "repoository": {
+    "type": "git",
+    "url": "https://github.com/ghostFlyTiger/express-xs-server.git"
+  },
+  "keywords": [
+    "express",
+    "server"
+  ],
+  "author": "fhtiger",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1"
+  }
+}

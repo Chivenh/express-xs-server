@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Chivenh FhTiger">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon"/>
+    <title>express-xs-server index</title>
+</head>
+<body>
+<hr>
+<p><b>The simple test based on Express is started!</b></p>
+<i>
+
+</i>
+<button>Get Name</button>
+<script>
+    document.querySelector("i").innerHTML=new Date().toLocaleString();
+    document.querySelector("button").addEventListener('click',()=>{
+        fetch('/getName').then((res)=>res.text()).then((data)=>alert(data));
+    });
+</script>
+</body>
+
+</html>
