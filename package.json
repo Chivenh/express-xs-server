@@ -1,12 +1,12 @@
 {
   "name": "express-xs-server",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "The simple server based on `Express`",
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
     "init": "npm install --save",
-    "publish": "npm publish"
+    "export": "npm publish"
   },
   "repoository": {
     "type": "git",
