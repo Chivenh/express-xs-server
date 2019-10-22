@@ -29,7 +29,7 @@ Server.all("*",(req, res, next)=>{
 });
 
 //前端加载模块依赖,前端用modules为加载根目录,后端转向到node_modules
-Server.get(/^\/modules\/.*\.js/,(req,res,next)=>{
+Server.get(/^\/modules\/.*\.(?:js|json|css)/,(req,res,next)=>{
     let url=req.url.replace(/^\/modules\/(.*\.js)/,'/node_modules/$1');
     // console.info(url);
     try {
