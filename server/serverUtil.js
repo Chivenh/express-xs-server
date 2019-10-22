@@ -28,7 +28,7 @@ Server.all("*",(req, res, next)=>{
     next();
 });
 
-let modulesResource=/^\/modules\/(.*\.(?:js|json|css))/;
+let modulesResource=/^\/modules\/(.+\..+)/;
 
 //前端加载模块依赖,前端用modules为加载根目录,后端转向到node_modules
 Server.get(modulesResource,(req,res,next)=>{
