@@ -23,8 +23,14 @@ Server.get("/", (req, res, next)=>{
     //deprecated res.sendfile to sendFile
     res.sendFile( webPath+ "/index.html");
 });
+
 Server.all("*",(req, res, next)=>{
-    // console.info(req.url);
+    let url = req.url;
+    if(/.*[\u4e00-\u9fa5]+.*/.test(url)){
+        //将中文路径转为可识别路径.
+        url.replace(/([\u4e00-\u9fa5])/g, (str) => encodeURIComponent(str) );
+        req.url=url;
+    }
     next();
 });
 
@@ -33,7 +39,10 @@ let modulesResource=/^\/modules\/(.+\..+)/;
 //前端加载模块依赖,前端用modules为加载根目录,后端转向到node_modules
 Server.get(modulesResource,(req,res,next)=>{
     let url=req.url.replace(modulesResource,'/node_modules/$1');
-    // console.info(url);
+    if(/(?:%[A-F0-9]{2})+/.test(url)){
+        //将中文路径还原
+        url = decodeURIComponent(url);
+    }
     try {
         res.sendFile(webPath+ url);
     }catch (e) {

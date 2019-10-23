@@ -1,6 +1,6 @@
 {
   "name": "express-xs-server",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The simple server based on `Express`",
   "main": "index.js",
   "scripts": {
