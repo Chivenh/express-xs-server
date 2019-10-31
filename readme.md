@@ -1,14 +1,14 @@
-*The simple test creator based on `Express` by Chivenh FhTiger *
+*The simple server creator based on `Express` by Chivenh FhTiger*
 
 #### Example
 ```js
-    let test = require("express-xs-test");
-    let staticWeb = test.listen({
+    let testServer = require("express-xs-server");
+    let staticWeb = testServer.listen({
         use: ['/web', '/main','/modulesHandler'],//static source
-        prepare:function (test) {
+        prepare:function (testServer) {
             //init before test created.
-            test.post(/*......*/);
-            test.get(/*......*/);
+            testServer.post(/*......*/);
+            testServer.get(/*......*/);
             /*add so on ......*/
         },
        port:8049    //port,if not set ,the default value is 8049.
